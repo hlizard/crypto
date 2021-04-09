@@ -24,7 +24,7 @@ class CBC
 
     public static function decrypt( src : Bytes, iv : Bytes, blockSize : Int, decryptBlock : Bytes->Int->Bytes->Int->Void) : Void
     {
-        var i : Int = src.toString().length;
+        var i : Int = Std.int(src.length/16)*16;
         var vpos : Int = i - blockSize;
         while(i > 0 )
         {
