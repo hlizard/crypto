@@ -8,7 +8,7 @@ class CBC
     {
 	var vector = iv.sub(0,iv.length);
 	var i : Int = 0;
-	var len : Int = Std.int(src.length/16)*16;
+	var len : Int = src.toString().length;
 	while (i < len)
 	{
 		for (j in 0...blockSize)
@@ -24,7 +24,7 @@ class CBC
 
     public static function decrypt( src : Bytes, iv : Bytes, blockSize : Int, decryptBlock : Bytes->Int->Bytes->Int->Void) : Void
     {
-        var i : Int = Std.int(src.length/16)*16;
+        var i : Int = src.toString().length;
         var vpos : Int = i - blockSize;
         while(i > 0 )
         {
